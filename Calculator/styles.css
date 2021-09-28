@@ -1,0 +1,75 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    width: 40vw;
+    border: 2px solid rgb(255, 0, 0);
+}
+
+.h4 {
+    display: flex;
+    background-color: red;
+    color: white;
+}
+
+h4 {
+    margin: 10px auto;
+}
+
+.wrapper {
+    padding: 0 10px;
+}
+
+
+.toRightSide {
+    display: flex;
+    justify-content: flex-end;
+}
+
+fieldset {
+    margin: 20px 0;
+}
+
+legend {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+input {
+    margin-right: 5px;
+}
+
+#volume,
+.price,
+.auction,
+#power,
+#custom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.customText {
+    font-size: small;
+}
+
+.cost {
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 10px;
+}
+
+#result {
+    color: red;
+    font-size: large;
+}

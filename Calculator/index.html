@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <main class="main">
+        <form action="#" method="get" class="form">
+            <div class="h4">
+                <h4>Калькулятор стоимости авто</h4>
+            </div>
+            <div class="wrapper">
+                <div class="price">
+                    <label for="auctionPrice">Цена за аукционе, ¥</label>
+                    <input type="text" value="" id="auctionPrice" />
+                </div>
+
+                <div class="auction">
+                    <label>Аукцион</label>
+                    <select name="auctionCars">
+                        <option value="22000" selected="selected">По умолчанию (¥22 000)</option>
+                        <option value="10">HONDA HOKKAIDO</option>
+                        <option value="10">HONDA KANSAI</option>
+                        <option value="10">HONDA KYUSHU</option>
+                        <option value="10">HONDA NAGOYA</option>
+                        <option value="10">HONDA SENDAI</option>
+                        <option value="10">HONDA TOKYO</option>
+                        <option value="10">HONDA TOKYO GOTENBA</option>
+                    </select>
+                </div>
+
+                <div class="toRightSide">
+                    <fieldset class="ourServices">
+                        <legend>Тип услуги</legend>
+                        <div class="list">
+                            <label><input type="radio" name="serviceType" value="20" id="services_0"
+                                    class="handle" checked="checked"/>Целый
+                                автомобиль</label>
+                            <label for="services_1"><input type="radio" name="serviceType" value="20" id="services_1"
+                                    />Распил
+                                легковой</label>
+                            <label><input type="radio" name="serviceType" value="20" id="services_2" />Распил
+                                рамный</label>
+                            <label><input type="radio" name="serviceType" value="20" id="services_3" />Конструктор
+                                легковой</label>
+                            <label><input type="radio" name="serviceType" value="20" id="services_4" />Конструктор
+                                джип</label>
+                            <label><input type="radio" name="serviceType" value="20" id="services_5" />Запчасти на
+                                палете</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div id="nextDivs">
+                    <div class="toRightSide">
+                        <fieldset class="fuel">
+                            <legend>Тип топлива</legend>
+                            <div class="list">
+                                <label><input type="radio" name="fuel" value="30" id="fuelType_0"
+                                        checked="checked" />бензин
+                                    (включая гибрид)</label>
+                                <label><input type="radio" name="fuel" value="30" id="fuelType_1" />дизель</label>
+                                <label><input type="radio" name="fuel" value="30" id="fuelType_2"
+                                        class="handle" />электрический</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div id="volume">
+                        <label for="engine_volume">Обьем двигателя в см<sup>3</sup></label>
+                        <input type="text" value="" id="engine_volume" />
+                    </div>
+
+                    <div id="power">
+                        <label for="engine_power">Мощность, л.с.</label>
+                        <input type="text" value="" id="engine_power" />
+                    </div>
+
+                    <div class="toRightSide">
+                        <fieldset class="ages">
+                            <legend>Возраст автомобиля</legend>
+                            <div class="list">
+                                <label><input type="radio" name="age" value="40" id="carAge_0"
+                                        class="handle" />Меньше 3
+                                    лет</label>
+                                <label><input type="radio" name="age" value="40" id="carAge_1"/>От
+                                    3
+                                    до 5
+                                    лет</label>
+                                <label><input type="radio" name="age" value="40" id="carAge_2" checked="checked" />От 5 до 7
+                                    лет</label>
+                                <label><input type="radio" name="age" value="40" id="carAge_3" />Больше 7
+                                    лет</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="toRightSide">
+                        <fieldset class="recipients">
+                            <legend>Получатель</legend>
+                            <div class="list">
+                                <label><input type="radio" name="recipientType" value="50"
+                                        id="recipientTypeIndividual"/>Физическое
+                                    лицо</label>
+                                <label><input type="radio" name="recipientType" value="50"
+                                        id="recipientTypeEntity" class="handle" checked="checked" />Юридическое
+                                    лицо</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div id="custom">
+                        <label for="customsPrice" class="customText">Таможенная стоимость, $<br />(оставьте поле
+                            пустым<br />
+                            для подачи по аукционной цене)</label>
+                        <input type="text" value="" id="customsPrice" />
+                    </div>
+                </div>
+
+                <div class="cost">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+                        id="getPrice">
+                        Рассчитать
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Результаты расчета</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="result">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
